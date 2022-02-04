@@ -1,16 +1,13 @@
 apply plugin: 'com.android.library'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.jetbrains.dokka'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 31
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 30
     }
     buildTypes {
         release {
@@ -22,5 +19,9 @@ android {
 
 dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    compileOnly 'androidx.appcompat:appcompat:1.4.1'
+    compileOnly 'com.google.android.material:material:1.6.0-alpha02'
 }
+
+
+apply from: 'https://raw.githubusercontent.com/Ayagikei/mvn-repo/main/gradle-mvn-push.gradle'
